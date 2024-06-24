@@ -1,0 +1,19 @@
+{
+    "name": "orange/kbk_movie",
+    "description": "Website dat ve xem phim online",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Orange2004"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.2",
+        "eftec/bladeone": "^4.13"
+    }
+}
