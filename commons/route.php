@@ -13,9 +13,14 @@ $router->filter('auth', function(){
     }
 });
 
-$router->get('/', [\App\Controllers\HomeController::class, 'index']);
+    $router->get('/', [\App\Controllers\HomeController::class, "index"]);
 
-$router->get('list-genre', [\App\Controllers\GenreController::class, 'listGenre']);
+    $router->get('list-genre', [\App\Controllers\GenreController::class, "listGenre"]);
+    $router->get('add-genre', [\App\Controllers\GenreController::class, "addGenre"]);
+    $router->post('post-genre', [\App\Controllers\GenreController::class, "postGenre"]);
+    $router->get('del-genre/{id}', [\App\Controllers\GenreController::class, "delGenre"]);
+    $router->get('detail-genre/{id}', [\App\Controllers\GenreController::class, "detailGenre"]);
+    $router->post('edit-genre/{id}', [\App\Controllers\GenreController::class, "editGenre"]);
 
 $dispatcher = new Dispatcher($router->getData());
 

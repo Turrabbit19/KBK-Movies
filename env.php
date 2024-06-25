@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost/kbk_movie/";
 const BASE_URL_IMG = "http://localhost/kbk_movie/";
 const DBHOST = "localhost";
 const DBNAME = "kbk_movie";
-const DBCHARSET = "ưtf8";
+const DBCHARSET = "utf8";
 const DBUSER = "root";
 const DBPASS = "";
 

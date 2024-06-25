@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'orange/kbk_movie',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '8d3b10c30e9869945fc34120d29b9753ce4b6f05',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'orange/kbk_movie' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '8d3b10c30e9869945fc34120d29b9753ce4b6f05',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
