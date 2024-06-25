@@ -22,6 +22,13 @@ $router->filter('auth', function(){
     $router->get('detail-genre/{id}', [\App\Controllers\GenreController::class, "detailGenre"]);
     $router->post('edit-genre/{id}', [\App\Controllers\GenreController::class, "editGenre"]);
 
+    $router->get('list-language', [\App\Controllers\LanguageController::class, "listLanguage"]);
+    $router->get('add-language', [\App\Controllers\LanguageController::class, "addLanguage"]);
+    $router->post('post-language', [\App\Controllers\LanguageController::class, "postLanguage"]);
+    $router->get('del-language/{id}', [\App\Controllers\LanguageController::class, "delLanguage"]);
+    $router->get('detail-language/{id}', [\App\Controllers\LanguageController::class,'detailLanguage']);
+    $router->post('edit-language/{id}', [\App\Controllers\LanguageController::class,'editLanguage']);
+    
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);

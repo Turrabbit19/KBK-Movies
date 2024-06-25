@@ -11,7 +11,7 @@
             </div>
 
             <br>
-            <input class="btn btn-outline-warning mr-2" type="submit" name="edit" value="Sửa">
+            <input class="btn btn-outline-warning mr-2" type="submit" name="edit" value="SỬA">
 
             <a href="{{route("list-genre")}}"><button type="button" class="btn btn-info">Danh sách</button></a>
         </form>
