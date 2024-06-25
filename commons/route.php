@@ -12,9 +12,10 @@ $router->filter('auth', function(){
         header('location: ' . BASE_URL . 'login');die;
     }
 });
-
+    // index
     $router->get('/', [\App\Controllers\HomeController::class, "index"]);
 
+    // Genres
     $router->get('list-genre', [\App\Controllers\GenreController::class, "listGenre"]);
     $router->get('add-genre', [\App\Controllers\GenreController::class, "addGenre"]);
     $router->post('post-genre', [\App\Controllers\GenreController::class, "postGenre"]);
@@ -22,12 +23,21 @@ $router->filter('auth', function(){
     $router->get('detail-genre/{id}', [\App\Controllers\GenreController::class, "detailGenre"]);
     $router->post('edit-genre/{id}', [\App\Controllers\GenreController::class, "editGenre"]);
 
+    // Languages
     $router->get('list-language', [\App\Controllers\LanguageController::class, "listLanguage"]);
     $router->get('add-language', [\App\Controllers\LanguageController::class, "addLanguage"]);
     $router->post('post-language', [\App\Controllers\LanguageController::class, "postLanguage"]);
     $router->get('del-language/{id}', [\App\Controllers\LanguageController::class, "delLanguage"]);
     $router->get('detail-language/{id}', [\App\Controllers\LanguageController::class,'detailLanguage']);
     $router->post('edit-language/{id}', [\App\Controllers\LanguageController::class,'editLanguage']);
+
+    // Casts
+    $router->get('list-cast', [\App\Controllers\CastController::class, "listCast"]);
+    $router->get('add-cast', [\App\Controllers\CastController::class, "addCast"]);
+    $router->post('post-cast', [\App\Controllers\CastController::class, "postCast"]);
+    $router->get('del-cast/{id}', [\App\Controllers\CastController::class, "delCast"]);
+    $router->get('detail-cast/{id}', [\App\Controllers\CastController::class,'detailCast']);
+    $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
     
 $dispatcher = new Dispatcher($router->getData());
 

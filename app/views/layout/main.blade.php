@@ -66,6 +66,7 @@
                         <h6 class="collapse-header">Các tùy chọn:</h6>
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
+                        <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
                     </div>
                 </div>
             </li>

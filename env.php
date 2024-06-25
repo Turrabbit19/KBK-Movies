@@ -1,6 +1,6 @@
 <?php
 const BASE_URL = "http://localhost/kbk_movie/";
-const BASE_URL_IMG = "http://localhost/kbk_movie/";
+const BASE_URL_IMG = "http://localhost/kbk_movie/public/admin/imgs/";
 const DBHOST = "localhost";
 const DBNAME = "kbk_movie";
 const DBCHARSET = "utf8";

@@ -10,12 +10,12 @@ class LanguageController extends BaseController {
     }
 
     public function listLanguage() {
-        $title = "KBK Movie";
+        $title = "KBK Admin";
         $languages = $this->languageModel->getLanguage();
         return $this->render('language.list', compact("title","languages"));
     }
     public function addLanguage() {
-        $title = "KBK Movie";
+        $title = "KBK Admin";
         return $this->render('language.add', compact('title'));
     }
     public function postLanguage() {
@@ -35,7 +35,7 @@ class LanguageController extends BaseController {
         }
     }
     public function detailLanguage($id) {
-        $title = "KBK Movie";
+        $title = "KBK Admin";
         $lan = $this->languageModel->getDetailLanguage($id);
         return $this->render("language.edit", compact("title","lan"));
     }
