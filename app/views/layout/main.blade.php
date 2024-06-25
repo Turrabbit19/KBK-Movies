@@ -65,7 +65,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Các tùy chọn:</h6>
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                     </div>
                 </div>
             </li>
