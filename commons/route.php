@@ -38,6 +38,9 @@ $router->filter('auth', function(){
     $router->get('del-cast/{id}', [\App\Controllers\CastController::class, "delCast"]);
     $router->get('detail-cast/{id}', [\App\Controllers\CastController::class,'detailCast']);
     $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
+
+    // Account
+    $router->get('list-account', [\App\Controllers\AccountController::class, "listAccount"]);
     
 $dispatcher = new Dispatcher($router->getData());
 
