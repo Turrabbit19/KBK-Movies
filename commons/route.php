@@ -38,7 +38,16 @@ $router->filter('auth', function(){
     $router->get('del-cast/{id}', [\App\Controllers\CastController::class, "delCast"]);
     $router->get('detail-cast/{id}', [\App\Controllers\CastController::class,'detailCast']);
     $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
-    
+
+    //Movie
+    $router->get('list-movie', [\App\Controllers\MovieController::class, "listMovie"]);
+    $router->get('add-movie', [\App\Controllers\MovieController::class, "addMovie"]);
+    $router->post('post-movie', [\App\Controllers\MovieController::class, "postMovie"]);
+    $router->get('del-movie/{id}', [\App\Controllers\MovieController::class, "delMovie"]);
+    $router->get('detail-movie/{id}', [\App\Controllers\MovieController::class, "detailMovie"]);
+    $router->post('edit-movie/{id}', [\App\Controllers\MovieController::class, "editMovie"]);
+   
+   
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
