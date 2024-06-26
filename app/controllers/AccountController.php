@@ -18,4 +18,17 @@ class AccountController extends BaseController
         $accounts = $this->accountModel->getAccount();
         return $this->render('account.list', compact('title', 'accounts'));
     }
+
+    public function lockAccount($id){
+        $result = $this->accountModel->lockAccount($id);
+        if($result){
+            redirect('success', 'Khóa tài khoản thành công', 'list-account');
+        }
+    }
+    public function openAccount($id){
+        $result = $this->accountModel->openAccount($id);
+        if($result){
+            redirect('success', 'Mở tài khoản thành công', 'list-account');
+        }
+    }
 }

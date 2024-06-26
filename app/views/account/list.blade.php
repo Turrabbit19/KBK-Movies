@@ -12,7 +12,11 @@
     </div>
 
 </div>
-
+@if (isset($_SESSION['errors']) && isset($_GET['msg']))
+<div class="text-center mb-3">
+    <span style="color: red">{{ $_SESSION['errors'] }}</span>
+</div>
+@endif
 @if (isset($_SESSION['success']) && isset($_GET['msg']))
 <div class="text-center mb-3">
     <span style="color: green">{{ $_SESSION['success'] }}</span>
@@ -62,7 +66,20 @@
                         <td>{{ $account->role }}</td>
 
                         <td>
-                          ?
+                            <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                                <span class="text">Mở</span>
+                            </a>
+
+                            <a href="{{route("lock-account/" . $account->id)}}" class="btn btn-secondary btn-icon-split"
+                                onclick="return confirm('Bạn có chắc chắn muốn khóa tài khoản không?!??')">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Khóa</span>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

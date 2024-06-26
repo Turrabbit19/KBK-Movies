@@ -18,7 +18,11 @@
         <span class="text">Thêm</span>
     </a>
 </div>
-
+@if (isset($_SESSION['errors']) && isset($_GET['msg']))
+<div class="text-center mb-3">
+    <span style="color: red">{{ $_SESSION['errors'] }}</span>
+</div>
+@endif
 @if (isset($_SESSION['success']) && isset($_GET['msg']))
 <div class="text-center mb-3">
     <span style="color: green">{{ $_SESSION['success'] }}</span>
@@ -74,7 +78,7 @@
             </table>
             @else
             <div class="d-flex justify-content-center align-items-center">
-                <p>Không có thể loại nào được tìm thấy.</p>
+                <p>Không có diễn viên nào được tìm thấy.</p>
             </div>
             @endif
         </div>

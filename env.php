@@ -2,7 +2,7 @@
 const BASE_URL = "http://localhost/kbk_movie/";
 const BASE_URL_IMG = "http://localhost/kbk_movie/public/admin/imgs/";
 const DBHOST = "localhost";
-const DBNAME = "kbk_movies";
+const DBNAME = "kbk_movie";
 const DBCHARSET = "utf8";
 const DBUSER = "root";
 const DBPASS = "";
@@ -22,4 +22,10 @@ function redirect($key = "",$msg = "",$url ="") {
 
 function route($name) {
     return BASE_URL.$name;
+}
+
+function debug($data) {
+    echo "<pre>";
+    print_r($data);
+    die;
 }

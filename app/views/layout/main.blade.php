@@ -29,7 +29,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route("") }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -68,6 +68,8 @@
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                         <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
                         <a class="collapse-item" href="{{ route("list-account") }}">Tài khoản</a>
+                        <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
+                        <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
                     </div>
                 </div>
             </li>

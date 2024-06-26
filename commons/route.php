@@ -41,7 +41,24 @@ $router->filter('auth', function(){
 
     // Account
     $router->get('list-account', [\App\Controllers\AccountController::class, "listAccount"]);
-    
+    $router->get('lock-account/{id}', [\App\Controllers\AccountController::class, "lockAccount"]);
+    $router->get('open-account/{id}', [\App\Controllers\AccountController::class, "openAccount"]);
+
+    // Food Categories
+    $router->get('list-foodCate', [\App\Controllers\FoodCateController::class, "listFoodCate"]);
+    $router->get('add-foodCate', [\App\Controllers\FoodCateController::class, "addFoodCate"]);
+    $router->post('post-foodCate', [\App\Controllers\FoodCateController::class, "postFoodCate"]);
+    $router->get('del-foodCate/{id}', [\App\Controllers\FoodCateController::class, "delFoodCate"]);
+    $router->get('detail-foodCate/{id}', [\App\Controllers\FoodCateController::class, "detailFoodCate"]);
+    $router->post('edit-foodCate/{id}', [\App\Controllers\FoodCateController::class, "editFoodCate"]);
+
+    // Food 
+    $router->get('list-food', [\App\Controllers\FoodController::class, "listFood"]);
+    $router->get('add-food', [\App\Controllers\FoodController::class, "addFood"]);
+    $router->post('post-food', [\App\Controllers\FoodController::class, "postFood"]);
+    $router->get('del-food/{id}', [\App\Controllers\FoodController::class, "delFood"]);
+    $router->get('detail-food/{id}', [\App\Controllers\FoodController::class, "detailFood"]);
+    $router->post('edit-food/{id}', [\App\Controllers\FoodController::class, "editFood"]);
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);

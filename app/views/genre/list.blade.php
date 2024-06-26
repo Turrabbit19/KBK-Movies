@@ -18,7 +18,11 @@
         <span class="text">Thêm</span>
     </a>
 </div>
-
+@if (isset($_SESSION['errors']) && isset($_GET['msg']))
+<div class="text-center mb-3">
+    <span style="color: red">{{ $_SESSION['errors'] }}</span>
+</div>
+@endif
 @if (isset($_SESSION['success']) && isset($_GET['msg']))
 <div class="text-center mb-3">
     <span style="color: green">{{ $_SESSION['success'] }}</span>
