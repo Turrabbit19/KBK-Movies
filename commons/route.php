@@ -46,6 +46,14 @@ $router->filter('auth', function(){
     $router->get('del-movie/{id}', [\App\Controllers\MovieController::class, "delMovie"]);
     $router->get('detail-movie/{id}', [\App\Controllers\MovieController::class, "detailMovie"]);
     $router->post('edit-movie/{id}', [\App\Controllers\MovieController::class, "editMovie"]);
+
+    //Coupons
+    $router ->get('list-coupon', [\App\Controllers\CouponController::class, "listCoupon"]);
+    $router ->get('add-coupon', [\App\Controllers\CouponController::class, "addCoupon"]);
+    $router ->post('post-coupon', [\App\Controllers\CouponController::class, "postCoupon"]);
+    $router ->get('del-coupon/{id}', [\App\Controllers\CouponController::class, "delCoupon"]);
+    $router ->get('detail-coupon/{id}', [\App\Controllers\CouponController::class, "detailCoupon"]);
+    $router ->post('edit-coupon/{id}', [\App\Controllers\CouponController::class, "editCoupon"]);
    
    
 $dispatcher = new Dispatcher($router->getData());
