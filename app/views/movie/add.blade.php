@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name">Ảnh diễn viên:</label>
+                    <label for="name">Ảnh phim:</label>
                     <input type="file" class="form-control-file" id="avatar" name="avatar">
                 </div>
 
