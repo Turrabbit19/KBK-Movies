@@ -67,6 +67,8 @@
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                         <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
+                        <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
+                        <a class="collapse-item" href="{{ route("list-coupon") }}">Giảm giá</a>
                     </div>
                 </div>
             </li>
