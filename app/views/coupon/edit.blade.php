@@ -13,7 +13,7 @@
 
                 <div class="form-group">
                     <label for="sale">Giá:</label>
-                    <input type="number" class="form-control-file" id="sale" name="sale" value="{{$coupon->sale}}">
+                    <input type="number" class="form-control" id="sale" name="sale" value="{{$coupon->sale}}">
                 </div>
 
                 <input class="btn btn-outline-success mr-2" type="submit" name="edit" value="SỬA">

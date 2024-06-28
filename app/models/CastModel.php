@@ -5,7 +5,7 @@ class CastModel extends BaseModel {
     protected $table = "casts";
 
     public function getCast() {
-        $sql = "SELECT * FROM $this->table order by id";
+        $sql = "SELECT * FROM $this->table order by name";
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }

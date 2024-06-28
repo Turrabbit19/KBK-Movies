@@ -34,8 +34,8 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Sale</th>
-                            <th>Create_at</th>
-                            <th>Update_at</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -44,8 +44,8 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Sale</th>
-                            <th>Create_at</th>
-                            <th>Update_at</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
                             <th>Actions</th>
                         </tr>
                         </tfoot>
@@ -55,8 +55,8 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $cous->name }}</td>
                                 <td>{{ $cous->sale }}</td>  
-                                <td>{{ $cous->created_at }}</td>
-                                <td>{{ $cous->updated_at }}</td>
+                                <td>{{ (new \DateTime($cous->created_at))->format('d/m/Y H:i:s') }}</td>
+                                <td>{{ (new \DateTime($cous->updated_at))->format('d/m/Y H:i:s') }}</td>
                                 <td>
                                     <a href="{{route("detail-coupon/" . $cous->id)}}" class="btn btn-warning btn-icon-split">
                                 <span class="icon text-white-50">
@@ -79,7 +79,7 @@
                     </table>
                 @else
                     <div class="d-flex justify-content-center align-items-center">
-                        <p>Không có thể loại nào được tìm thấy.</p>
+                        <p>Không có mã giảm giá nào được tìm thấy.</p>
                     </div>
                 @endif
             </div>

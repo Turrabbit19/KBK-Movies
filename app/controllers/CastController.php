@@ -39,6 +39,7 @@ class CastController extends BaseController
         if(isset($_POST['add']) && ($_POST['add']) != "") 
         {
             $name = $_POST['name'];
+            $image = isset($image) ? $image : '';
 
             $result = $this->castModel->addCast(NULL, $name, $image);
             if ($result) {

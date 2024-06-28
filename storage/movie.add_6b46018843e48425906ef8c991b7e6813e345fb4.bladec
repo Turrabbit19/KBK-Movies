@@ -5,57 +5,50 @@
  <div class="card shadow mb-4">
  <div class="card-body">
  <form action="<?php echo \htmlentities(route("post-movie")??'', ENT_QUOTES, 'UTF-8', false); ?>" method="POST" class="m-3" enctype="multipart/form-data">
- 
  <div class="form-group">
  <label for="name">Tên Phim:</label>
  <input type="text" class="form-control" id="name" name="name">
  </div>
 
  <div class="form-group">
- <label for="name">Poster:</label>
+ <label for="text">Poster:</label>
  <input type="file" class="form-control-file" id="poster" name="poster">
  </div>
-
+ 
  <div class="form-group">
+<<<<<<< HEAD
  <label for="name">Ảnh phim:</label>
+=======
+ <label for="text">Avatar:</label>
+>>>>>>> 846802836449347b11c7dcc119b0e43b2842bcad
  <input type="file" class="form-control-file" id="avatar" name="avatar">
  </div>
 
  <div class="form-group">
  <label for="text">Đạo diễn:</label>
- <input type="text" class="form-control-file" id="director" name="director">
+ <input type="text" class="form-control" id="director" name="director">
  </div>
 
  <div class="form-group">
  <label for="text">Thời lượng phim:</label>
- <input type="text" class="form-control-file" id="duration" name="duration">
+ <input type="text" class="form-control" id="duration" name="duration">
  </div>
 
  <div class="form-group">
  <label for="date">Ngày phát hành:</label>
- <input type="date" class="form-control-file" id="release_date" name="release_date">
+ <input type="date" class="form-control" id="release_date" name="release_date">
  </div>
 
  <div class="form-group">
  <label for="text">Mô tả:</label>
- <input type="text" class="form-control-file" id="description" name="description">
+ <textarea class="form-control" id="description" name="description" rows="3"></textarea>
  </div>
 
  <div class="form-group">
  <label for="text">Trailer Video:</label>
- <input type="text" class="form-control-file" id="trailer_url" name="trailer_url">
+ <input type="text" class="form-control" id="trailer_url" name="trailer_url">
  </div>
-
- <?php /* <div class="form-group">
- <label for="date">Ngày tạo:</label>
- <input type="date" class="form-control-file" id="created_at" name="created_at">
- </div>
-
- <div class="form-group">
- <label for="date">Ngày cập nhật:</label>
- <input type="date" class="form-control-file" id="updated_at" name="updated_at">
- </div> */ ?>
-
+ 
  <br>
  <input class="btn btn-outline-success mr-2" type="submit" name="add" value="THÊM">
 
