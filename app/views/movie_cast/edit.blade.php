@@ -14,12 +14,11 @@
 <div class="card shadow mb-4">
     <div class="card-body">
         <form action="{{ route('edit-movCas/' . $movCas->id) }}" method="POST" class="m-3">
-            @csrf
             <div class="form-group">
                 <label for="nameMovie">Tên phim:</label>
                 <select class="form-control" id="nameMovie" name="movie_id">
                     @foreach($movies as $movs)
-                        <option value="{{ $movs->id }}" {{ $movs->id == $movCas->idMovie ? 'selected' : '' }}>
+                        <option value="{{ $movs->id }}" {{ $movs->id == $movCas->movie_id ? 'selected' : '' }}>
                             {{ $movs->name }}
                         </option>
                     @endforeach
@@ -30,7 +29,7 @@
                 <label for="nameCast">Tên diễn viên:</label>
                 <select class="form-control" id="nameCast" name="cast_id">
                     @foreach($casts as $cass)
-                        <option value="{{ $cass->id }}" {{ $cass->id == $movCas->idCast ? 'selected' : '' }}>
+                        <option value="{{ $cass->id }}" {{ $cass->id == $movCas->cast_id ? 'selected' : '' }}>
                             {{ $cass->name }}
                         </option>
                     @endforeach

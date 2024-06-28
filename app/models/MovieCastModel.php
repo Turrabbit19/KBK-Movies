@@ -5,11 +5,12 @@ class MovieCastModel extends BaseModel {
     protected $table = "movie_cast";
 
     public function getMovieCast() {
-        $sql = "SELECT $this->table.id as id, casts.name as nameCast, movies.name as nameMovie,
-        $this->table.created_at as created_at, $this->table.updated_at as updated_at FROM $this->table 
-        INNER JOIN casts ON casts.id = $this->table.cast_id
-        INNER JOIN movies ON movies.id = $this->table.movie_id
-        order by $this->table.movie_id";
+        $sql = "SELECT mc.*, c.name AS nameCast, m.name AS nameMovie
+            FROM $this->table AS mc
+            INNER JOIN casts AS c ON c.id = mc.cast_id
+            INNER JOIN movies AS m ON m.id = mc.movie_id
+            ORDER BY mc.movie_id
+";
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }
@@ -24,12 +25,11 @@ class MovieCastModel extends BaseModel {
         return $this->execute([$id]);
     }
     public function getDetailMovieCast($id) {
-        $sql = "SELECT $this->table.id as id, 
-                        $this->table.cast_id as idCast, casts.name as nameCast, 
-                        $this->table.movie_id as idMovie, movies.name as nameMovie FROM $this->table 
-        INNER JOIN casts ON casts.id = $this->table .cast_id
-        INNER JOIN movies ON movies.id = $this->table .movie_id
-        WHERE $this->table.id = ?";
+        $sql = "SELECT mc.*, c.name AS nameCast, m.name AS nameMovie
+            FROM {$this->table} AS mc
+            INNER JOIN casts AS c ON c.id = mc.cast_id
+            INNER JOIN movies AS m ON m.id = mc.movie_id
+            WHERE mc.id = ?";
         $this->setQuery($sql);
         return $this->loadRow([$id]);
     }

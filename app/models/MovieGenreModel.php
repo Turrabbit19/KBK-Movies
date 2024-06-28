@@ -5,11 +5,12 @@ class MovieGenreModel extends BaseModel {
     protected $table = "movie_genre";
 
     public function getMovieGenre() {
-        $sql = "SELECT $this->table.id as id, genres.name as nameGenre, movies.name as nameMovie,
-        $this->table.created_at as created_at, $this->table.updated_at as updated_at FROM $this->table 
-        INNER JOIN genres ON genres.id = $this->table .genre_id
-        INNER JOIN movies ON movies.id = $this->table .movie_id
-        order by $this->table.movie_id";
+        $sql = "SELECT mg.*, g.name AS nameGenre, m.name AS nameMovie
+            FROM $this->table AS mg
+        INNER JOIN genres AS g ON g.id = mg.genre_id
+        INNER JOIN movies AS m ON m.id = mg.movie_id
+        ORDER BY mg.movie_id";
+
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }
@@ -24,12 +25,12 @@ class MovieGenreModel extends BaseModel {
         return $this->execute([$id]);
     }
     public function getDetailMovieGenre($id) {
-        $sql = "SELECT $this->table.id as id, 
-                        $this->table.genre_id as idGenre, genres.name as nameGenre, 
-                        $this->table.movie_id as idMovie, movies.name as nameMovie FROM $this->table 
-        INNER JOIN genres ON genres.id = $this->table .genre_id
-        INNER JOIN movies ON movies.id = $this->table .movie_id
-        WHERE $this->table.id = ?";
+        $sql = "SELECT mg.*, g.name AS nameGenre, m.name AS nameMovie
+            FROM $this->table AS mg
+            INNER JOIN genres AS g ON g.id = mg.genre_id
+            INNER JOIN movies AS m ON m.id = mg.movie_id
+            WHERE mg.id = ?
+";
         $this->setQuery($sql);
         return $this->loadRow([$id]);
     }

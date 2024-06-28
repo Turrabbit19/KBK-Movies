@@ -5,11 +5,11 @@ class MovieLanguageModel extends BaseModel {
     protected $table = "movie_language";
 
     public function getMovieLanguage() {
-        $sql = "SELECT $this->table.id as id, languages.name as nameLanguage, movies.name as nameMovie,
-        $this->table.created_at as created_at, $this->table.updated_at as updated_at FROM $this->table 
-        INNER JOIN languages ON languages.id = $this->table .language_id	
-        INNER JOIN movies ON movies.id = $this->table .movie_id
-        order by $this->table.movie_id";
+        $sql = "SELECT ml.*, l.name AS nameLanguage, m.name AS nameMovie
+            FROM $this->table AS ml
+            INNER JOIN languages AS l ON l.id = ml.language_id
+            INNER JOIN movies AS m ON m.id = ml.movie_id
+            ORDER BY ml.movie_id";
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }
@@ -36,12 +36,11 @@ class MovieLanguageModel extends BaseModel {
         return $this->execute([$id]);
     }
     public function getDetailMovieLanguage($id) {
-        $sql = "SELECT $this->table.id as id, 
-                        $this->table.language_id as idLanguage, languages.name as nameLanguage, 
-                        $this->table.movie_id as idMovie, movies.name as nameMovie FROM $this->table 
-        INNER JOIN languages ON languages.id = $this->table .language_id
-        INNER JOIN movies ON movies.id = $this->table .movie_id
-        WHERE $this->table.id = ?";
+        $sql = "SELECT ml.*, l.name AS nameLanguage, m.name AS nameMovie
+            FROM $this->table AS ml
+            INNER JOIN languages AS l ON l.id = ml.language_id
+            INNER JOIN movies AS m ON m.id = ml.movie_id
+            WHERE ml.id = ?";
         $this->setQuery($sql);
         return $this->loadRow([$id]);
     }

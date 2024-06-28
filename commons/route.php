@@ -39,6 +39,14 @@ $router->filter('auth', function(){
     $router->get('detail-cast/{id}', [\App\Controllers\CastController::class,'detailCast']);
     $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
 
+    // Photos
+    $router->get('list-photo', [\App\Controllers\PhotoController::class, "index"]);
+    $router->get('add-photo', [\App\Controllers\PhotoController::class, "add"]);
+    $router->post('post-photo', [\App\Controllers\PhotoController::class, "post"]);
+    $router ->get('del-photo/{id}', [\App\Controllers\PhotoController::class, "delete"]);
+    $router->get('detail-photo/{id}', [\App\Controllers\PhotoController::class, "detail"]);
+    $router->post('edit-photo/{id}', [\App\Controllers\PhotoController::class, "edit"]);
+
     // Movies
     $router->get('list-movie', [\App\Controllers\MovieController::class, "listMovie"]);
     $router->get('add-movie', [\App\Controllers\MovieController::class, "addMovie"]);
