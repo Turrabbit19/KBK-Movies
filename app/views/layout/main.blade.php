@@ -67,11 +67,17 @@
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                         <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
+<<<<<<< HEAD
                         <a class="collapse-item" href="{{ route("list-accountAppear") }}">Tài khoản hiện</a>
                         <a class="collapse-item" href="{{ route("list-accountHidden") }}">Tài khoản ẩn</a>
                         <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
                         <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
                         <a class="collapse-item" href="{{ route("list-review") }}">Bình luận</a>
+=======
+                        <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
+                        <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
+                        <a class="collapse-item" href="{{ route("list-coupon") }}">Mã giảm giá</a>
+>>>>>>> 846802836449347b11c7dcc119b0e43b2842bcad
                     </div>
                 </div>
             </li>
@@ -81,16 +87,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Luồng</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Các tùy chọn:</h6>
+                        <a class="collapse-item" href="{{route("list-movGen")}}">Movie_Genre</a>
+                        <a class="collapse-item" href="{{route("list-movLan")}}">Movie_Language</a>
+                        <a class="collapse-item" href="{{route("list-movCas")}}">Movie_Cast</a>
                     </div>
                 </div>
             </li>

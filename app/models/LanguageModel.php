@@ -5,7 +5,7 @@ class LanguageModel extends BaseModel {
     protected $table = "languages";
 
     public function getLanguage() {
-        $sql = "SELECT * FROM $this->table order by id";
+        $sql = "SELECT * FROM $this->table order by name";
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }

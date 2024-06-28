@@ -6,7 +6,7 @@ class GenreModel extends BaseModel {
 
     public function getGenre() 
     { 
-        $sql = "SELECT * FROM $this->table order by id";
+        $sql = "SELECT * FROM $this->table order by name";
         $this->setQuery($sql);
         return $this->loadAllRows([]);
     }
