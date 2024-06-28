@@ -29,24 +29,20 @@ class MovieController extends BaseController
     public function postMovie()
     {
         if (isset($_FILES['poster']) && !empty($_FILES['poster'])) {
-            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/kbk_movie/public/admin/imgs/'; // Thư mục đích để lưu file
+            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/kbk_movie/public/admin/imgs/'; 
 
-            // Lấy tên file và đường dẫn đầy đủ
             $poster = $_FILES['poster']['name'];
             $posterFile = $uploadDir . basename($poster);
 
-            // Di chuyển file từ thư mục tạm thời đến thư mục đích
             move_uploaded_file($_FILES['poster']['tmp_name'], $posterFile);
         }
 
         if (isset($_FILES['avatar']) && !empty($_FILES['avatar'])) {
-            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/kbk_movie/public/admin/imgs/'; // Thư mục đích để lưu file
+            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/kbk_movie/public/admin/imgs/'; 
 
-            // Lấy tên file và đường dẫn đầy đủ
             $avatar = $_FILES['avatar']['name'];
             $avatarFile = $uploadDir . basename($avatar);
 
-            // Di chuyển file từ thư mục tạm thời đến thư mục đích
             move_uploaded_file($_FILES['avatar']['tmp_name'], $avatarFile);
         }
 

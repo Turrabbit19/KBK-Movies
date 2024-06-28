@@ -40,8 +40,8 @@
                             <th>Release_date</th>
                             <th>Description</th>
                             <th>Trailer_url</th>
-                            <th>Create_at</th>
-                            <th>Update_at</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -56,8 +56,8 @@
                             <th>Release_date</th>
                             <th>Description</th>
                             <th>Trailer_url</th>
-                            <th>Create_at</th>
-                            <th>Update_at</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
                             <th>Actions</th>
                         </tr>
                         </tfoot>
@@ -70,11 +70,10 @@
                                 <td class="text-center"><img src="{{BASE_URL_IMG . $movs->avatar}}" alt="" class="w-100"></td>
                                 <td>{{ $movs->director }}</td>
                                 <td>{{ $movs->duration }}</td>
-                                <td>{{ $movs->release_date }}</td>
-                                <td>{{ $movs->description }}</td>
+                                <td>{{ \DateTime::createFromFormat('Y-m-d', $movs->release_date)->format('d/m/Y') }}</td>                                <td>{{ $movs->description }}</td>
                                 <td>{{ $movs->trailer_url }}</td>
-                                <td>{{ $movs->created_at }}</td>
-                                <td>{{ $movs->updated_at }}</td>
+                                <td>{{ (new \DateTime($movs->created_at))->format('d/m/Y H:i:s') }}</td>
+                                <td>{{ (new \DateTime($movs->updated_at))->format('d/m/Y H:i:s') }}</td>
                                 <td>
                                     <a href="{{route("detail-movie/" . $movs->id)}}" class="btn btn-warning btn-icon-split">
                                 <span class="icon text-white-50">
@@ -82,13 +81,13 @@
                                 </span>
                                         <span class="text">Sửa</span>
                                     </a>
-
+                                    <br><br>
                                     <a href="{{route("del-movie/" . $movs->id)}}" class="btn btn-danger btn-icon-split"
                                        onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                        <span class="text">Xóa</span>
+                                        <span class="text">Xóa.</span>
                                     </a>
                                 </td>
                             </tr>
@@ -97,7 +96,7 @@
                     </table>
                 @else
                     <div class="d-flex justify-content-center align-items-center">
-                        <p>Không có thể loại nào được tìm thấy.</p>
+                        <p>Không có phim nào được tìm thấy.</p>
                     </div>
                 @endif
             </div>
