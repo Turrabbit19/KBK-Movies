@@ -37,6 +37,7 @@
                         <th>Phone</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Created_at</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -50,6 +51,7 @@
                         <th>Phone</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Created_at</th>
                         <th>Actions</th>
                     </tr>
                 </tfoot>
@@ -57,13 +59,14 @@
                     @foreach($accounts as $index => $account)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td class="text-center"><img src="{{BASE_URL_IMG . $account->image}}" alt="" class="w-50"></td>
+                        <td class="text-center"><img src="{{BASE_URL_IMG . $account->avatar}}" alt="" width="120px" height="150px"></td>
                         <td>{{ $account->name }}</td>
                         <td>{{ $account->address }}</td>
                         <td>{{ $account->email }}</td>
                         <td>{{ $account->phone_number }}</td>
                         <td>{{ $account->password }}</td>
                         <td>{{ $account->role }}</td>
+                        <td>{{ $account->created_at }}</td>
 
                         <td>
                             <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary btn-icon-split">

@@ -23,9 +23,9 @@
     <span style="color: red">{{ $_SESSION['errors'] }}</span>
 </div>
 @endif
-@if (isset($_SESSION['errors']) && isset($_GET['msg']))
+@if (isset($_SESSION['success']) && isset($_GET['msg']))
 <div class="text-center mb-3">
-    <span style="color: green">{{ $_SESSION['errors'] }}</span>
+    <span style="color: green">{{ $_SESSION['success'] }}</span>
 </div>
 @endif
 
@@ -43,6 +43,8 @@
                         <th>Price_Sale</th>
                         <th>Quantity</th>
                         <th>Category</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -55,6 +57,8 @@
                         <th>Price_Sale</th>
                         <th>Quantity</th>
                         <th>Category</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
                         <th>Actions</th>
                     </tr>
                 </tfoot>
@@ -68,6 +72,8 @@
                         <td>{{ $food->f_price_sale }}</td>
                         <td>{{ $food->f_quantity }}</td>
                         <td>{{ $food->fc_name }}</td>
+                        <td>{{ $food->f_created_at }}</td>
+                        <td>{{ ($food->f_updated_at == $food->f_created_at) ? "Chưa sửa" : $food->f_updated_at }}</td>
 
                         <td>
                             <a href="{{route("detail-food/" . $food->f_id)}}" class="btn btn-warning btn-icon-split">

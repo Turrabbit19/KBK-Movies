@@ -13,6 +13,8 @@ class FoodModel extends BaseModel
                 f.price      AS  f_price,
                 f.price_sale AS f_price_sale,
                 f.quantity   AS f_quantity,
+                f.created_at AS f_created_at,
+                f.updated_at AS f_updated_at,
                 fc.name      AS  fc_name,
                 fc.id        AS  fc_id
         FROM $this->table AS f
@@ -23,8 +25,8 @@ class FoodModel extends BaseModel
     }
 
     public function addFood($id, $name, $image, $price, $price_sale, $quantity, $food_cgr_id){
-        $sql = "INSERT INTO $this->table(id, name, image, price, price_sale, quantity, food_cgr_id)
-        VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO $this->table(id, name, image, price, price_sale, quantity, food_cgr_id, created_at)
+        VALUES(?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
         $this->setQuery($sql);
         return $this->execute([$id, $name, $image, $price, $price_sale, $quantity, $food_cgr_id]);
     }
@@ -86,7 +88,7 @@ class FoodModel extends BaseModel
     public function countFood_ID($id){
         $sql = "SELECT COUNT(*) AS count FROM $this->table WHERE food_cgr_id = ?";
         $this->setQuery($sql);
-        return $this->fetchSingle([$id]);
+        return $this->loadRow([$id]);
     }
     
 }

@@ -74,19 +74,6 @@ class BaseModel
         return $this->pdo->lastInsertId();
     }
 
-    public function fetchSingle($options = array()) {
-        if (!$options) {
-            if (!$result = $this->execute()) {
-                return false;
-            }
-        } else {
-            if (!$result = $this->execute($options)) {
-                return false;
-            }
-        }
-        return $result->fetch(PDO::FETCH_OBJ); // Trả về một hàng duy nhất dưới dạng đối tượng
-    }
-
     public function disconnect() {
         $this->sta=NULL;
         $this->pdo = NULL;

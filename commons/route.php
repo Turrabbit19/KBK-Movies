@@ -59,6 +59,11 @@ $router->filter('auth', function(){
     $router->get('del-food/{id}', [\App\Controllers\FoodController::class, "delFood"]);
     $router->get('detail-food/{id}', [\App\Controllers\FoodController::class, "detailFood"]);
     $router->post('edit-food/{id}', [\App\Controllers\FoodController::class, "editFood"]);
+
+    // Review
+    $router->get('list-review', [\App\Controllers\ReviewController::class, "listReview"]);
+    $router->get('hidden-review/{id}', [\App\Controllers\ReviewController::class, "hiddenreview"]);
+    $router->get('appear-review/{id}', [\App\Controllers\ReviewController::class, "appearreview"]);
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
