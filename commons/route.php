@@ -40,9 +40,10 @@ $router->filter('auth', function(){
     $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
 
     // Account
-    $router->get('list-account', [\App\Controllers\AccountController::class, "listAccount"]);
-    $router->get('lock-account/{id}', [\App\Controllers\AccountController::class, "lockAccount"]);
-    $router->get('open-account/{id}', [\App\Controllers\AccountController::class, "openAccount"]);
+    $router->get('list-accountAppear', [\App\Controllers\AccountController::class, "listAccountAppear"]);
+    $router->get('list-accountHidden', [\App\Controllers\AccountController::class, "listAccountHidden"]);
+    $router->get('lock-account/{id}', [\App\Controllers\AccountController::class, "hiddenAccount"]);
+    $router->get('open-account/{id}', [\App\Controllers\AccountController::class, "appearAccount"]);
 
     // Food Categories
     $router->get('list-foodCate', [\App\Controllers\FoodCateController::class, "listFoodCate"]);

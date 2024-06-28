@@ -12,6 +12,7 @@ class ReviewModel extends BaseModel
                 rw.content      AS rw_content,
                 rw.rating       AS rw_rating,
                 rw.created_at   AS rw_created_at,
+                rw.updated_at   AS rw_updated_at,
                 rw.status       AS rw_status,
                 rw.id           AS rw_id
         FROM $this->table AS rw

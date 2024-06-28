@@ -56,8 +56,8 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $foodCate->name }}</td>
-                        <td>{{ $foodCate->created_at }}</td>
-                        <td>{{ ($foodCate->updated_at == $foodCate->created_at) ? "Chưa sửa" : $foodCate->updated_at }}</td>
+                        <td>{{ (new \DateTime($foodCate->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ (new \DateTime($foodCate->created_at))->format('d/m/Y H:i:s') }}</td>
 
                         <td>
                             <a href="{{route("detail-foodCate/" . $foodCate->id)}}" class="btn btn-warning btn-icon-split">

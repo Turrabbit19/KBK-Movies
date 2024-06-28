@@ -4,12 +4,13 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
     <div>
-        <h1 class="h3 text-gray-800">Reviews</h1>
+        <h1 class="h3 text-gray-800">Account Hidden</h1>
         <p class="mb-4">
-            Bình luận
+            Tài khoản
             <a target="_blank" href="https://datatables.net">KBK Movie</a>.
         </p>
     </div>
+
 </div>
 @if (isset($_SESSION['errors']) && isset($_GET['msg']))
 <div class="text-center mb-3">
@@ -21,19 +22,21 @@
     <span style="color: green">{{ $_SESSION['success'] }}</span>
 </div>
 @endif
-
 <div class="card shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">
-            @if (count($reviews) > 0)
+            @if (count($accounts) > 0)
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Account</th>
-                        <th>Movie</th>
-                        <th>Content</th>
-                        <th>Rating</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Password</th>
+                        <th>Role</th>
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
@@ -43,10 +46,13 @@
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>Account</th>
-                        <th>Movie</th>
-                        <th>Content</th>
-                        <th>Rating</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Password</th>
+                        <th>Role</th>
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
@@ -54,32 +60,28 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach($reviews as $index => $review)
+                    @foreach($accounts as $index => $account)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $review->ac_name }}</td>
-                        <td>{{ $review->mv_name }}</td>
-                        <td>{{ $review->rw_content }}</td>
-                        <td>{{ $review->rw_rating }}</td>
-                        <td>{{ $review->rw_status }}</td>
-                        <td>{{ (new \DateTime($review->rw_created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($review->rw_created_at))->format('d/m/Y H:i:s') }}</td>
-
+                        <td class="text-center"><img src="{{BASE_URL_IMG . $account->avatar}}" alt="" width="120px" height="150px"></td>
+                        <td>{{ $account->name }}</td>
+                        <td>{{ $account->address }}</td>
+                        <td>{{ $account->email }}</td>
+                        <td>{{ $account->phone_number }}</td>
+                        <td>{{ $account->password }}</td>
+                        <td>{{ $account->role }}</td>
+                        <td>{{ $account->status }}</td>
+                        <td>{{ (new \DateTime($account->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ (new \DateTime($account->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        
                         <td>
-                            <a href="{{route("appear-review/" . $review->rw_id)}}" class="btn btn-primary btn-icon-split">
+                            <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
                                 <span class="text">Hiện</span>
                             </a>
 
-                            <a href="{{route("hidden-review/" . $review->rw_id)}}" class="btn btn-secondary btn-icon-split"
-                                onclick="return confirm('Bạn có chắc chắn muốn ẩn không?!??')">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Ẩn</span>
-                            </a>
                         </td>
                     </tr>
                     @endforeach
@@ -87,7 +89,7 @@
             </table>
             @else
             <div class="d-flex justify-content-center align-items-center">
-                <p>Không có bình luận nào được tìm thấy.</p>
+                <p>Không có tài khoản ẩn nào được tìm thấy.</p>
             </div>
             @endif
         </div>

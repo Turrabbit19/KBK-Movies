@@ -72,8 +72,8 @@
                         <td>{{ $food->f_price_sale }}</td>
                         <td>{{ $food->f_quantity }}</td>
                         <td>{{ $food->fc_name }}</td>
-                        <td>{{ $food->f_created_at }}</td>
-                        <td>{{ ($food->f_updated_at == $food->f_created_at) ? "Chưa sửa" : $food->f_updated_at }}</td>
+                        <td>{{ (new \DateTime($food->f_created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ (new \DateTime($food->f_created_at))->format('d/m/Y H:i:s') }}</td>
 
                         <td>
                             <a href="{{route("detail-food/" . $food->f_id)}}" class="btn btn-warning btn-icon-split">

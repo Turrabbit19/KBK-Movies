@@ -4,7 +4,7 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
     <div>
-        <h1 class="h3 text-gray-800">Account</h1>
+        <h1 class="h3 text-gray-800">Account Appear</h1>
         <p class="mb-4">
             Tài khoản
             <a target="_blank" href="https://datatables.net">KBK Movie</a>.
@@ -37,7 +37,9 @@
                         <th>Phone</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Status</th>
                         <th>Created_at</th>
+                        <th>Updated_at</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -51,7 +53,9 @@
                         <th>Phone</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Status</th>
                         <th>Created_at</th>
+                        <th>Updated_at</th>
                         <th>Actions</th>
                     </tr>
                 </tfoot>
@@ -66,22 +70,18 @@
                         <td>{{ $account->phone_number }}</td>
                         <td>{{ $account->password }}</td>
                         <td>{{ $account->role }}</td>
-                        <td>{{ $account->created_at }}</td>
-
+                        <td>{{ $account->status }}</td>
+                        <td>{{ (new \DateTime($account->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ (new \DateTime($account->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        
                         <td>
-                            <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                <span class="text">Mở</span>
-                            </a>
 
                             <a href="{{route("lock-account/" . $account->id)}}" class="btn btn-secondary btn-icon-split"
                                 onclick="return confirm('Bạn có chắc chắn muốn khóa tài khoản không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Khóa</span>
+                                <span class="text">Ẩn</span>
                             </a>
                         </td>
                     </tr>

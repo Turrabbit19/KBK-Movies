@@ -13,22 +13,27 @@ class AccountController extends BaseController
         $this->accountModel = New AccountModel();
     }
 
-    public function listAccount(){
+    public function listAccountAppear(){
         $title = "KBK Admin";
-        $accounts = $this->accountModel->getAccount();
-        return $this->render('account.list', compact('title', 'accounts'));
+        $accounts = $this->accountModel->getAccountAppear();
+        return $this->render('account.listAppear', compact('title', 'accounts'));
+    }
+    public function listAccountHidden(){
+        $title = "KBK Admin";
+        $accounts = $this->accountModel->getAccountHidden();
+        return $this->render('account.listHidden', compact('title', 'accounts'));
     }
 
-    public function lockAccount($id){
-        $result = $this->accountModel->lockAccount($id);
+    public function hiddenAccount($id){
+        $result = $this->accountModel->hiddenAccount($id);
         if($result){
-            redirect('success', 'Khóa tài khoản thành công', 'list-account');
+            redirect('success', 'Ẩn tài khoản thành công', 'list-accountHidden');
         }
     }
-    public function openAccount($id){
-        $result = $this->accountModel->openAccount($id);
+    public function appearAccount($id){
+        $result = $this->accountModel->appearAccount($id);
         if($result){
-            redirect('success', 'Mở tài khoản thành công', 'list-account');
+            redirect('success', 'Hiện tài khoản thành công', 'list-accountAppear');
         }
     }
 }
