@@ -55,6 +55,13 @@ $router->filter('auth', function(){
     $router ->get('detail-coupon/{id}', [\App\Controllers\CouponController::class, "detailCoupon"]);
     $router ->post('edit-coupon/{id}', [\App\Controllers\CouponController::class, "editCoupon"]);
    
+    //Seat_Types
+    $router ->get('list-seat-type', [\App\Controllers\SeatTypeController::class, "listSeatType"]);
+    $router ->get('add-seat-type', [\App\Controllers\SeatTypeController::class, "addSeatType"]);
+    $router ->post('post-seat-type', [\App\Controllers\SeatTypeController::class, "postSeatType"]);
+    $router ->get('del-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "delSeatType"]);
+    $router ->get('detail-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "detailSeatType"]);
+    $router ->post('edit-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "editSeatType"]);
    
 $dispatcher = new Dispatcher($router->getData());
 
