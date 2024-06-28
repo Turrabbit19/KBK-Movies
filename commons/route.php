@@ -63,6 +63,14 @@ $router->filter('auth', function(){
     $router ->get('detail-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "detailSeatType"]);
     $router ->post('edit-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "editSeatType"]);
    
+    //rooms
+    $router ->get('list-room', [\App\Controllers\RoomController::class, "listRoom"]);
+    $router ->get('add-room', [\App\Controllers\RoomController::class, "addRoom"]);
+    $router ->post('post-room', [\App\Controllers\RoomController::class, "postRoom"]);
+    $router ->get('del-room/{id}', [\App\Controllers\RoomController::class, "delRoom"]);
+    $router ->get('detail-room/{id}', [\App\Controllers\RoomController::class, "getDetailRoom"]);
+    $router ->post('edit-room/{id}', [\App\Controllers\RoomController::class, "editRoom"]);
+    
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
