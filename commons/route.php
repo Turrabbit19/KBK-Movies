@@ -118,4 +118,3 @@ $dispatcher = new Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
 
 echo $response;
-?>
