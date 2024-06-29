@@ -39,7 +39,34 @@ $router->filter('auth', function(){
     $router->get('detail-cast/{id}', [\App\Controllers\CastController::class,'detailCast']);
     $router->post('edit-cast/{id}', [\App\Controllers\CastController::class,'editCast']);
 
-    // Photos
+     // Account
+     $router->get('list-accountAppear', [\App\Controllers\AccountController::class, "listAccountAppear"]);
+     $router->get('list-accountHidden', [\App\Controllers\AccountController::class, "listAccountHidden"]);
+     $router->get('lock-account/{id}', [\App\Controllers\AccountController::class, "hiddenAccount"]);
+     $router->get('open-account/{id}', [\App\Controllers\AccountController::class, "appearAccount"]);
+ 
+     // Food Categories
+     $router->get('list-foodCate', [\App\Controllers\FoodCateController::class, "listFoodCate"]);
+     $router->get('add-foodCate', [\App\Controllers\FoodCateController::class, "addFoodCate"]);
+     $router->post('post-foodCate', [\App\Controllers\FoodCateController::class, "postFoodCate"]);
+     $router->get('del-foodCate/{id}', [\App\Controllers\FoodCateController::class, "delFoodCate"]);
+     $router->get('detail-foodCate/{id}', [\App\Controllers\FoodCateController::class, "detailFoodCate"]);
+     $router->post('edit-foodCate/{id}', [\App\Controllers\FoodCateController::class, "editFoodCate"]);
+ 
+     // Food 
+     $router->get('list-food', [\App\Controllers\FoodController::class, "listFood"]);
+     $router->get('add-food', [\App\Controllers\FoodController::class, "addFood"]);
+     $router->post('post-food', [\App\Controllers\FoodController::class, "postFood"]);
+     $router->get('del-food/{id}', [\App\Controllers\FoodController::class, "delFood"]);
+     $router->get('detail-food/{id}', [\App\Controllers\FoodController::class, "detailFood"]);
+     $router->post('edit-food/{id}', [\App\Controllers\FoodController::class, "editFood"]);
+ 
+     // Review
+     $router->get('list-review', [\App\Controllers\ReviewController::class, "listReview"]);
+     $router->get('hidden-review/{id}', [\App\Controllers\ReviewController::class, "hiddenreview"]);
+     $router->get('appear-review/{id}', [\App\Controllers\ReviewController::class, "appearreview"]);
+
+      // Photos
     $router->get('list-photo', [\App\Controllers\PhotoController::class, "index"]);
     $router->get('add-photo', [\App\Controllers\PhotoController::class, "add"]);
     $router->post('post-photo', [\App\Controllers\PhotoController::class, "post"]);
@@ -86,11 +113,8 @@ $router->filter('auth', function(){
     $router ->get('del-coupon/{id}', [\App\Controllers\CouponController::class, "delCoupon"]);
     $router ->get('detail-coupon/{id}', [\App\Controllers\CouponController::class, "detailCoupon"]);
     $router ->post('edit-coupon/{id}', [\App\Controllers\CouponController::class, "editCoupon"]);
-   
-   
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
 
 echo $response;
-?>
