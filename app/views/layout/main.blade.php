@@ -67,9 +67,17 @@
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                         <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
+
+                        <a class="collapse-item" href="{{ route("list-accountAppear") }}">Tài khoản hiện</a>
+                        <a class="collapse-item" href="{{ route("list-accountHidden") }}">Tài khoản ẩn</a>
+                        <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
+                        <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
+                        <a class="collapse-item" href="{{ route("list-review") }}">Bình luận</a>
+
                         <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
                         <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
                         <a class="collapse-item" href="{{ route("list-coupon") }}">Mã giảm giá</a>
+
                     </div>
                 </div>
             </li>

@@ -23,3 +23,9 @@ function redirect($key = "",$msg = "",$url ="") {
 function route($name) {
     return BASE_URL.$name;
 }
+
+function debug($data) {
+    echo "<pre>";
+    print_r($data);
+    die;
+}
