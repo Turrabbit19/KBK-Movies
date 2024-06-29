@@ -57,7 +57,7 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $foodCate->name }}</td>
                         <td>{{ (new \DateTime($foodCate->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($foodCate->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ (new \DateTime($foodCate->updated_at))->format('d/m/Y H:i:s') }}</td>
 
                         <td>
                             <a href="{{route("detail-foodCate/" . $foodCate->id)}}" class="btn btn-warning btn-icon-split">
