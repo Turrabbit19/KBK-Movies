@@ -111,6 +111,13 @@ $router->filter('auth', function(){
     $router ->get('detail-seat/{id}', [\App\Controllers\SeatController::class, "detailSeat"]);
     $router ->post('edit-seat/{id}', [\App\Controllers\SeatController::class, "editSeat"]);
 
+    //showtimes
+    $router ->get('list-showtime',[\App\controllers\ShowTimeController::class, "listShowTime"]);
+    $router ->get('add-showtime',[\App\controllers\ShowTimeController::class, "addShowTime"]);
+    $router ->post('post-showtime',[\App\controllers\ShowTimeController::class, "postShowTime"]);
+    $router ->get('del-showtime/{id}',[\App\controllers\ShowTimeController::class, "delShowTime"]);
+    $router ->get('detail-showtime/{id}',[\App\controllers\ShowTimeController::class, "getDetailShowTime"]);
+    $router ->post('edit-showtime/{id}',[\App\controllers\ShowTimeController::class, "editShowTime"]);
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
