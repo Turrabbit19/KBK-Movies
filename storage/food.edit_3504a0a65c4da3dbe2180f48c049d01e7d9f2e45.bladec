@@ -1,0 +1,54 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+
+ <div class="card shadow mb-4">
+ <div class="card-body">
+ <form action="<?php echo \htmlentities(route("edit-food/" . $food->f_id)??'', ENT_QUOTES, 'UTF-8', false); ?>" method="POST" class="m-3" enctype="multipart/form-data">
+ <div class="form-group">
+ <label for="file">Ảnh đồ ăn:</label>
+ <div class="text-center">
+ <img src="<?php echo \htmlentities(BASE_URL_IMG . $food->f_image??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="$food->image" class="w-25">
+ </div>
+ <input type="file" class="form-control-file" id="image" name="image">
+ </div>
+ <div class="form-group">
+ <label for="name">Danh mục đồ ăn:</label>
+ <select class="form-control" id="food_cgr_id" name="food_cgr_id">
+ <option value="0" selected>-- Vui lòng chọn danh mục đồ ăn --</option>
+ <?php $__currentLoopData = $food_cgrs; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $food_cgr): $loop = $this->incrementLoopIndices();  ?>
+ <option <?php echo \htmlentities(($food_cgr->id == $food->f_food_cgr_id) ? 'selected' : NULL??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ value="<?php echo \htmlentities($food_cgr->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($food_cgr->name??'', ENT_QUOTES, 'UTF-8', false); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="name">Tên đồ ăn:</label>
+ <input type="text" class="form-control" id="name" name="name" value="<?php echo \htmlentities($food->f_name??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="form-group">
+ <label for="name">Giá đồ ăn:</label>
+ <input type="text" class="form-control" id="price" name="price" value="<?php echo \htmlentities($food->f_price??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="form-group">
+ <label for="name">Giá sale đồ ăn:</label>
+ <input type="text" class="form-control" id="price_sale" name="price_sale" value="<?php echo \htmlentities($food->f_price_sale??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="form-group">
+ <label for="name">Số lượng đồ ăn:</label>
+ <input type="text" class="form-control" id="quantity" name="quantity" value="<?php echo \htmlentities($food->f_quantity??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+
+
+ <br>
+ <input class="btn btn-outline-warning mr-2" type="submit" name="edit" value="SỬA">
+
+ <a href="<?php echo \htmlentities(route("list-food")??'', ENT_QUOTES, 'UTF-8', false); ?>"><button type="button" class="btn btn-info">Danh sách</button></a>
+ </form>
+ </div>
+ </div>
+
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.main'); } ?>
