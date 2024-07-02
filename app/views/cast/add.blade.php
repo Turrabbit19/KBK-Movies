@@ -15,7 +15,7 @@
         <div class="card-body">
             <form action="{{ route("post-cast") }}" method="POST" class="m-3" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="file">Ảnh diễn viên:</label>
+                    <label for="name">Ảnh diễn viên:</label>
                     <input type="file" class="form-control-file" id="image" name="image">
                 </div>
                 <div class="form-group">

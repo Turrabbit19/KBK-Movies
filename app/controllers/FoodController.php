@@ -28,6 +28,7 @@ class FoodController extends BaseController
             $name = $_POST['name'];
             $price = $_POST['price'];
             $price_sale = $_POST['price_sale'];
+            $totals = $_POST['price_sale'] ? $_POST['price_sale'] : $_POST['price'];
             $quantity = $_POST['quantity'];
             $food_cgr_id = $_POST['food_cgr_id'];
             if(isset($_FILES['image']) && !empty($_FILES['image'])){
@@ -42,6 +43,7 @@ class FoodController extends BaseController
                 $image, 
                 $price, 
                 $price_sale, 
+                $totals,
                 $quantity, 
                 $food_cgr_id
             );
@@ -70,6 +72,7 @@ class FoodController extends BaseController
             $name = $_POST['name'];
             $price = $_POST['price'];
             $price_sale = $_POST['price_sale'];
+            $totals = $_POST['price_sale'] ? $_POST['price_sale'] : $_POST['price'];
             $quantity = $_POST['quantity'];
             $food_cgr_id = $_POST['food_cgr_id'];
             if(isset($_FILES['image']) && !empty($_FILES['image'])){
@@ -84,6 +87,7 @@ class FoodController extends BaseController
                 $image, 
                 $price, 
                 $price_sale, 
+                $totals, 
                 $quantity, 
                 $food_cgr_id
             );

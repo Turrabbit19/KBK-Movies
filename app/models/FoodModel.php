@@ -24,11 +24,11 @@ class FoodModel extends BaseModel
         return $this->loadAllRows([]);
     }
 
-    public function addFood($id, $name, $image, $price, $price_sale, $quantity, $food_cgr_id){
-        $sql = "INSERT INTO $this->table(id, name, image, price, price_sale, quantity, food_cgr_id, created_at)
-        VALUES(?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
+    public function addFood($id, $name, $image, $price, $price_sale, $totals, $quantity, $food_cgr_id){
+        $sql = "INSERT INTO $this->table(id, name, image, price, price_sale, totals, quantity, food_cgr_id, created_at)
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
         $this->setQuery($sql);
-        return $this->execute([$id, $name, $image, $price, $price_sale, $quantity, $food_cgr_id]);
+        return $this->execute([$id, $name, $image, $price, $price_sale, $totals, $quantity, $food_cgr_id]);
     }
 
     public function delFood($id){
@@ -55,32 +55,34 @@ class FoodModel extends BaseModel
         return $this->loadRow([$id]);
     }
 
-    public function editFood($id, $name, $image, $price, $price_sale, $quantity, $food_cgr_id){
+    public function editFood($id, $name, $image, $price, $price_sale, $totals, $quantity, $food_cgr_id){
         if(!empty($image)){
             $sql = "UPDATE $this->table 
             SET name = ?, 
                 image = ?, 
                 price = ?, 
                 price_sale = ?, 
+                totals = ?, 
                 quantity = ?, 
                 food_cgr_id = ?, 
                 updated_at = CURRENT_TIMESTAMP 
             WHERE id = ?
             ";
             $this->setQuery($sql);
-            return $this->execute([$name, $image, $price, $price_sale, $quantity, $food_cgr_id, $id]);
+            return $this->execute([$name, $image, $price, $price_sale, $totals, $quantity, $food_cgr_id, $id]);
         }else{
             $sql = "UPDATE $this->table 
             SET name = ?, 
                 price = ?, 
                 price_sale = ?, 
+                totals = ?, 
                 quantity = ?, 
                 food_cgr_id = ?, 
                 updated_at = CURRENT_TIMESTAMP 
             WHERE id = ?
             ";
             $this->setQuery($sql);
-            return $this->execute([$name, $price, $price_sale, $quantity, $food_cgr_id, $id]);
+            return $this->execute([$name, $price, $price_sale, $totals, $quantity, $food_cgr_id, $id]);
         }
     }
 

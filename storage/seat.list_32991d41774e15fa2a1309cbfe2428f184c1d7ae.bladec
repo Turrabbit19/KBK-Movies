@@ -4,25 +4,21 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
  <div>
- <h1 class="h3 text-gray-800">Food Categories</h1>
+ <h1 class="h3 text-gray-800">Seat</h1>
  <p class="mb-4">
- Danh mục đồ ăn
+ Ghế
  <a target="_blank" href="https://datatables.net">KBK Movie</a>.
  </p>
  </div>
 
- <a href="<?php echo \htmlentities(route("add-foodCate")??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-primary btn-icon-split">
+ <a href="<?php echo \htmlentities(route("add-seat")??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-primary btn-icon-split">
  <span class="icon text-white-50">
  <i class="fas fa-arrow-right"></i>
  </span>
  <span class="text">Thêm</span>
  </a>
 </div>
-<?php if(isset($_SESSION['errors']) && isset($_GET['msg'])): ?>
-<div class="text-center mb-3">
- <span style="color: red"><?php echo \htmlentities($_SESSION['errors']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
-</div>
-<?php endif; ?>
+
 <?php if(isset($_SESSION['success']) && isset($_GET['msg'])): ?>
 <div class="text-center mb-3">
  <span style="color: green"><?php echo \htmlentities($_SESSION['success']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
@@ -31,44 +27,51 @@
 <div class="card shadow mb-4">
  <div class="card-body">
  <div class="table-responsive">
- <?php if(count($foodCates) > 0): ?>
+ <?php if(count($seats) > 0): ?>
  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
  <thead>
  <tr>
  <th>#</th>
- <th>Name</th>
- <th>Created_at</th>
- <th>Updated_at</th>
+ <th>room_id</th>
+ <th>seat_type_id </th>
+ <th>seat_number </th>
+ <th>totals </th>
  <th>Actions</th>
  </tr>
  </thead>
  <tfoot>
  <tr>
  <th>#</th>
- <th>Name</th>
- <th>Created_at</th>
- <th>Updated_at</th>
+ <th>room_id</th>
+ <th>seat_type_id </th>
+ <th>seat_number </th>
+ <th>totals </th>
  <th>Actions</th>
  </tr>
  </tfoot>
  <tbody>
- <?php $__currentLoopData = $foodCates; $this->addLoop($__currentLoopData);$this->getFirstLoop();
- foreach($__currentLoopData as $index => $foodCate): $loop = $this->incrementLoopIndices();  ?>
+ <?php $__currentLoopData = $seats; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $index => $seat): $loop = $this->incrementLoopIndices();  ?>
+ 
+ <?php $seat->totals = $seat->price; ?>
+ <?php $seat->room_id = $seat->room_number; ?>
+ <?php $seat->seat_type_id = $seat->type_name; ?>
  <tr>
  <td><?php echo \htmlentities($index + 1??'', ENT_QUOTES, 'UTF-8', false); ?></td>
- <td><?php echo \htmlentities($foodCate->name??'', ENT_QUOTES, 'UTF-8', false); ?></td>
- <td><?php echo \htmlentities((new \DateTime($foodCate->created_at))->format('d/m/Y H:i:s')??'', ENT_QUOTES, 'UTF-8', false); ?></td>
- <td><?php echo \htmlentities((new \DateTime($foodCate->updated_at))->format('d/m/Y H:i:s')??'', ENT_QUOTES, 'UTF-8', false); ?></td>
-
+ <td><?php echo \htmlentities($seat->room_id??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($seat->seat_type_id??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($seat->seat_number??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($seat->totals??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ 
  <td>
- <a href="<?php echo \htmlentities(route("detail-foodCate/" . $foodCate->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-warning btn-icon-split">
+ <a href="<?php echo \htmlentities(route("detail-seat/" . $seat->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-warning btn-icon-split">
  <span class="icon text-white-50">
  <i class="fas fa-exclamation-triangle"></i>
  </span>
  <span class="text">Sửa</span>
  </a>
 
- <a href="<?php echo \htmlentities(route("del-foodCate/" . $foodCate->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-danger btn-icon-split"
+ <a href="<?php echo \htmlentities(route("del-seat/" . $seat->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-danger btn-icon-split"
  onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
  <span class="icon text-white-50">
  <i class="fas fa-trash"></i>
@@ -82,7 +85,7 @@
  </table>
  <?php else: ?>
  <div class="d-flex justify-content-center align-items-center">
- <p>Không có danh mục đồ ăn nào được tìm thấy.</p>
+ <p>Không có thể loại nào được tìm thấy.</p>
  </div>
  <?php endif; ?>
  </div>
