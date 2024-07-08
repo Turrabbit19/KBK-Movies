@@ -113,6 +113,48 @@ $router->filter('auth', function(){
     $router ->get('del-coupon/{id}', [\App\Controllers\CouponController::class, "delCoupon"]);
     $router ->get('detail-coupon/{id}', [\App\Controllers\CouponController::class, "detailCoupon"]);
     $router ->post('edit-coupon/{id}', [\App\Controllers\CouponController::class, "editCoupon"]);
+
+    //Seat_Types
+    $router ->get('list-seat-type', [\App\Controllers\SeatTypeController::class, "listSeatType"]);
+    $router ->get('add-seat-type', [\App\Controllers\SeatTypeController::class, "addSeatType"]);
+    $router ->post('post-seat-type', [\App\Controllers\SeatTypeController::class, "postSeatType"]);
+    $router ->get('del-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "delSeatType"]);
+    $router ->get('detail-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "detailSeatType"]);
+    $router ->post('edit-seat-type/{id}', [\App\Controllers\SeatTypeController::class, "editSeatType"]);
+   
+    //rooms
+    $router ->get('list-room', [\App\Controllers\RoomController::class, "listRoom"]);
+    $router ->get('add-room', [\App\Controllers\RoomController::class, "addRoom"]);
+    $router ->post('post-room', [\App\Controllers\RoomController::class, "postRoom"]);
+    $router ->get('del-room/{id}', [\App\Controllers\RoomController::class, "delRoom"]);
+    $router ->get('detail-room/{id}', [\App\Controllers\RoomController::class, "getDetailRoom"]);
+    $router ->post('edit-room/{id}', [\App\Controllers\RoomController::class, "editRoom"]);
+
+    //seats
+    $router ->get('list-seat', [\App\Controllers\SeatController::class, "listSeat"]);
+    $router ->get('add-seat', [\App\Controllers\SeatController::class, "addSeat"]);
+    $router ->post('post-seat', [\App\Controllers\SeatController::class, "postSeat"]);
+    $router ->get('del-seat/{id}', [\App\Controllers\SeatController::class, "delSeat"]);
+    $router ->get('detail-seat/{id}', [\App\Controllers\SeatController::class, "detailSeat"]);
+    $router ->post('edit-seat/{id}', [\App\Controllers\SeatController::class, "editSeat"]);
+
+    //showtimes
+    $router ->get('list-showtime',[\App\controllers\ShowTimeController::class, "listShowTime"]);
+    $router ->get('add-showtime',[\App\controllers\ShowTimeController::class, "addShowTime"]);
+    $router ->post('post-showtime',[\App\controllers\ShowTimeController::class, "postShowTime"]);
+    $router ->get('del-showtime/{id}',[\App\controllers\ShowTimeController::class, "delShowTime"]);
+    $router ->get('detail-showtime/{id}',[\App\controllers\ShowTimeController::class, "getDetailShowTime"]);
+    $router ->post('edit-showtime/{id}',[\App\controllers\ShowTimeController::class, "editShowTime"]);
+
+    // Bills
+    $router ->get('list-bill',[\App\controllers\BillController::class, "listBill"]);
+    $router ->get('del-bill/{id}',[\App\controllers\BillController::class, "delBill"]);
+
+    // Booking
+    $router ->get('list-booking',[\App\controllers\BookingController::class, "listBooking"]);
+    $router ->get('del-booking/{id}',[\App\controllers\BookingController::class, "delBooking"]);
+
+
 $dispatcher = new Dispatcher($router->getData());
 
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $url);
