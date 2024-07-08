@@ -67,20 +67,20 @@
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
                         <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
                         <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
-
                         <a class="collapse-item" href="{{ route("list-accountAppear") }}">Tài khoản hiện</a>
                         <a class="collapse-item" href="{{ route("list-accountHidden") }}">Tài khoản ẩn</a>
                         <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
                         <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
                         <a class="collapse-item" href="{{ route("list-review") }}">Bình luận</a>
-
                         <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
                         <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
-                        <a class="collapse-item" href="{{ route("list-coupon") }}">Giảm giá</a>
+                        <a class="collapse-item" href="{{ route("list-coupon") }}">Mã giảm giá</a>
                         <a class="collapse-item" href="{{ route("list-seat-type") }}">Loại ghế</a>
                         <a class="collapse-item" href="{{ route("list-room") }}">Phòng</a>
                         <a class="collapse-item" href="{{ route("list-seat") }}">Ghế</a>
                         <a class="collapse-item" href="{{ route("list-showtime") }}">Giờ chiếu</a>
+                        <a class="collapse-item" href="{{ route("list-bill") }}">Thanh toán</a>
+                        <a class="collapse-item" href="{{ route("list-booking") }}">Đặt vé</a>
                     </div>
                 </div>
             </li>

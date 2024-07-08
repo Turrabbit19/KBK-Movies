@@ -17,10 +17,14 @@
  
  <div class="form-group">
 <<<<<<< HEAD
+<<<<<<< HEAD
  <label for="name">Ảnh phim:</label>
 =======
  <label for="text">Avatar:</label>
 >>>>>>> 846802836449347b11c7dcc119b0e43b2842bcad
+=======
+ <label for="name">Ảnh phim:</label>
+>>>>>>> d4d7ed75775fea1971d54992f47de20b86dba2d3
  <input type="file" class="form-control-file" id="avatar" name="avatar">
  </div>
 
