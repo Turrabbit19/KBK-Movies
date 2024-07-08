@@ -40,7 +40,7 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Flash</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -56,7 +56,7 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Flash</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -72,14 +72,14 @@
                         <td>{{ $account->role }}</td>
                         <td>{{ $account->status }}</td>
                         <td>{{ (new \DateTime($account->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($account->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $account->updated_at == $account->created_at ? ' ' : (new \DateTime($account->updated_at))->format("d/m/Y H:i:s") }}</td>
                         
                         <td>
-                            <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary btn-icon-split">
+                            <a href="{{route("open-account/" . $account->id)}}" class="btn btn-primary"
+                                onclick="return confirm('Bạn có chắc chắn muốn mở lại tài khoản này không?!??')">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <i class="fas fa-eye"></i>
                                 </span>
-                                <span class="text">Hiện</span>
                             </a>
 
                         </td>

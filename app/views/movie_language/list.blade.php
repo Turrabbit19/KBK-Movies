@@ -36,7 +36,8 @@
                         <th>Language's Name</th>  
                         <th>Created_at</th>
                         <th>Updated_at</th>                      
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -46,7 +47,8 @@
                         <th>Language's Name</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>   
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -56,22 +58,20 @@
                         <td>{{ $mls->nameMovie }}</td>
                         <td>{{ $mls->nameLanguage }}</td>
                         <td>{{ (new \DateTime($mls->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($mls->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $mls->updated_at == $mls->created_at ? ' ' : (new \DateTime($mls->updated_at))->format("d/m/Y H:i:s") }}</td>
 
                         <td>
-                            <a href="{{route("detail-movLan/" . $mls->id)}}" class="btn btn-warning btn-icon-split">
+                            <a href="{{route("detail-movLan/" . $mls->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Sửa</span>
                             </a>
 
-                            <a href="{{route("del-movLan/" . $mls->id)}}" class="btn btn-danger btn-icon-split"
+                            <a href="{{route("del-movLan/" . $mls->id)}}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
                             </a>
                         </td>
                     </tr>

@@ -37,14 +37,20 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Actions</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Actions</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -52,20 +58,21 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $gens->name }}</td>
+                        <td>{{ (new \DateTime($gens->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $gens->updated_at == $gens->created_at ? ' ' : (new \DateTime($gens->updated_at))->format("d/m/Y H:i:s") }}</td>
                         <td>
-                            <a href="{{route("detail-genre/" . $gens->id)}}" class="btn btn-warning btn-icon-split">
+                            <a href="{{route("detail-genre/" . $gens->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Sửa</span>
                             </a>
-
-                            <a href="{{route("del-genre/" . $gens->id)}}" class="btn btn-danger btn-icon-split"
+                        </td>
+                        <td>
+                            <a href="{{route("del-genre/" . $gens->id)}}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
                             </a>
                         </td>
                     </tr>

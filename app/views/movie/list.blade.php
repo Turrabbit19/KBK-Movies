@@ -42,7 +42,8 @@
                             <th>Trailer_url</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
-                            <th>Actions</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -58,7 +59,8 @@
                             <th>Trailer_url</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
-                            <th>Actions</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -70,24 +72,24 @@
                                 <td class="text-center"><img src="{{BASE_URL_IMG . $movs->avatar}}" alt="" class="w-100"></td>
                                 <td>{{ $movs->director }}</td>
                                 <td>{{ $movs->duration }}</td>
-                                <td>{{ \DateTime::createFromFormat('Y-m-d', $movs->release_date)->format('d/m/Y') }}</td>                                <td>{{ $movs->description }}</td>
+                                <td>{{ \DateTime::createFromFormat('Y-m-d', $movs->release_date)->format('d/m/Y') }}</td>                                
+                                <td>{{ $movs->description }}</td>
                                 <td>{{ $movs->trailer_url }}</td>
                                 <td>{{ (new \DateTime($movs->created_at))->format('d/m/Y H:i:s') }}</td>
-                                <td>{{ (new \DateTime($movs->updated_at))->format('d/m/Y H:i:s') }}</td>
+                                <td>{{ $movs->updated_at == $movs->created_at ? ' ' : (new \DateTime($movs->updated_at))->format("d/m/Y H:i:s") }}</td>
                                 <td>
-                                    <a href="{{route("detail-movie/" . $movs->id)}}" class="btn btn-warning btn-icon-split">
+                                    <a href="{{route("detail-movie/" . $movs->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                        <span class="text">Sửa</span>
                                     </a>
-                                    <br><br>
-                                    <a href="{{route("del-movie/" . $movs->id)}}" class="btn btn-danger btn-icon-split"
+                                </td>
+                                <td>
+                                    <a href="{{route("del-movie/" . $movs->id)}}" class="btn btn-danger"
                                        onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                        <span class="text">Xóa.</span>
                                     </a>
                                 </td>
                             </tr>

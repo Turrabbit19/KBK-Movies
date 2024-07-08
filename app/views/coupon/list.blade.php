@@ -36,7 +36,8 @@
                             <th>Sale</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
-                            <th>Actions</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -46,7 +47,8 @@
                             <th>Sale</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
-                            <th>Actions</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -54,23 +56,23 @@
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $cous->name }}</td>
-                                <td>{{ $cous->sale }}</td>  
+                                <td>{{ number_format($cous->sale) }} VNĐ</td>  
                                 <td>{{ (new \DateTime($cous->created_at))->format('d/m/Y H:i:s') }}</td>
-                                <td>{{ (new \DateTime($cous->updated_at))->format('d/m/Y H:i:s') }}</td>
+                                <td>{{ $cous->updated_at == $cous->created_at ? ' ' : (new \DateTime($cous->updated_at))->format("d/m/Y H:i:s") }}</td>
                                 <td>
-                                    <a href="{{route("detail-coupon/" . $cous->id)}}" class="btn btn-warning btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                        <span class="text">Sửa</span>
+                                    <a href="{{route("detail-coupon/" . $cous->id)}}" class="btn btn-warning">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span>
                                     </a>
-
-                                    <a href="{{route("del-coupon/" . $cous->id)}}" class="btn btn-danger btn-icon-split"
-                                       onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-trash"></i>
-                                </span>
-                                        <span class="text">Xóa</span>
+                                    <br><br>
+                                </td>
+                                <td>
+                                    <a href="{{route("del-coupon/" . $cous->id)}}" class="btn btn-danger"
+                                        onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
                                     </a>
                                 </td>
                             </tr>

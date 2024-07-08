@@ -56,43 +56,36 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#movie"
+                    aria-expanded="true" aria-controls="movie">
+                    <i class="fas fa-fw fa-film"></i>
                     <span>Phim</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="movie" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Các tùy chọn:</h6>
-                        <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
-                        <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
-                        <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
-
-                        <a class="collapse-item" href="{{ route("list-accountAppear") }}">Tài khoản hiện</a>
-                        <a class="collapse-item" href="{{ route("list-accountHidden") }}">Tài khoản ẩn</a>
-                        <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
-                        <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
-                        <a class="collapse-item" href="{{ route("list-review") }}">Bình luận</a>
-
+                        <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
+                        <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
+                        <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
+                        <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
+           
+                        <h6 class="collapse-header">Movie:</h6>
                         <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
-                        <a class="collapse-item" href="{{ route("list-coupon") }}">Mã giảm giá</a>
-
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#link"
+                    aria-expanded="true" aria-controls="link">
+                    <i class="fas fa-fw fa-link"></i>
                     <span>Luồng</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                <div id="link" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Các tùy chọn:</h6>
+                        <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="{{route("list-movGen")}}">Movie_Genre</a>
                         <a class="collapse-item" href="{{route("list-movLan")}}">Movie_Language</a>
                         <a class="collapse-item" href="{{route("list-movCas")}}">Movie_Cast</a>
@@ -105,40 +98,48 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Khác
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#account"
+                    aria-expanded="true" aria-controls="account">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Tài khoản</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="account" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="{{ route("list-accountHidden") }}">Tài khoản ẩn</a>
+                        <a class="collapse-item" href="{{ route("list-accountAppear") }}">Tài khoản hiện</a>
+
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header">Reviews:</h6>
+                        <a class="collapse-item" href="{{ route("list-review") }}">Đánh giá</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#food"
+                    aria-expanded="true" aria-controls="food">
+                    <i class="fas fa-fw fa-lemon"></i>
+                    <span>Đồ ăn</span>
+                </a>
+                <div id="food" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="{{ route("list-foodCate") }}">Danh mục đồ ăn</a>
+                        <a class="collapse-item" href="{{ route("list-food") }}">Đồ ăn</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="{{ route("list-coupon") }}">
+                    <i class="fas fa-fw fa-ticket-alt"></i>
+                    <span>Coupon</span></a>
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">

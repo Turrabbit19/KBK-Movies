@@ -37,7 +37,8 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Flash</th>
+                        <th>Hide</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -50,7 +51,8 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Flash</th>
+                        <th>Hide</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -63,22 +65,21 @@
                         <td>{{ $review->rw_rating }}</td>
                         <td>{{ $review->rw_status }}</td>
                         <td>{{ (new \DateTime($review->rw_created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($review->rw_created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $review->rw_updated_at == $review->rw_created_at ? ' ' : (new \DateTime($review->rw_updated_at))->format("d/m/Y H:i:s") }}</td>
 
                         <td>
                             <a href="{{route("appear-review/" . $review->rw_id)}}" class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Hiện</span>
                             </a>
-
+                        </td>
+                        <td>
                             <a href="{{route("hidden-review/" . $review->rw_id)}}" class="btn btn-secondary btn-icon-split"
                                 onclick="return confirm('Bạn có chắc chắn muốn ẩn không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Ẩn</span>
                             </a>
                         </td>
                     </tr>

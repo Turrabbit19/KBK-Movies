@@ -37,7 +37,8 @@
                         <th>Movie's Name</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -48,7 +49,8 @@
                         <th>Movie's Name</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -59,22 +61,21 @@
                         <td>{{ $ps->name }}</td>
                         <td>{{ $ps->nameMovie }}</td>
                         <td>{{ (new \DateTime($ps->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($ps->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $ps->updated_at == $ps->created_at ? ' ' : (new \DateTime($ps->updated_at))->format("d/m/Y H:i:s") }}</td>
 
                         <td>
-                            <a href="{{route("detail-photo/" . $ps->id)}}" class="btn btn-warning btn-icon-split">
+                            <a href="{{route("detail-photo/" . $ps->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Sửa</span>
                             </a>
-                            <br><br>
-                            <a href="{{route("del-photo/" . $ps->id)}}" class="btn btn-danger btn-icon-split"
+                        </td>
+                        <td>
+                            <a href="{{route("del-photo/" . $ps->id)}}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa.</span>
                             </a>
                         </td>
                     </tr>

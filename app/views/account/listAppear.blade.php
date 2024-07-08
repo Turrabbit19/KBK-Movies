@@ -40,7 +40,7 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Hide</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -56,7 +56,7 @@
                         <th>Status</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
-                        <th>Actions</th>
+                        <th>Hide</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -72,16 +72,15 @@
                         <td>{{ $account->role }}</td>
                         <td>{{ $account->status }}</td>
                         <td>{{ (new \DateTime($account->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($account->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $account->updated_at == $account->created_at ? ' ' : (new \DateTime($account->updated_at))->format("d/m/Y H:i:s") }}</td>
                         
                         <td>
 
-                            <a href="{{route("lock-account/" . $account->id)}}" class="btn btn-secondary btn-icon-split"
-                                onclick="return confirm('Bạn có chắc chắn muốn khóa tài khoản không?!??')">
+                            <a href="{{route("lock-account/" . $account->id)}}" class="btn btn-secondary"
+                                onclick="return confirm('Bạn có chắc chắn muốn khóa tài khoản này không?!??')">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-eye-slash"></i>
                                 </span>
-                                <span class="text">Ẩn</span>
                             </a>
                         </td>
                     </tr>

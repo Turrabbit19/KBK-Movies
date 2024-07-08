@@ -38,7 +38,10 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Actions</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -46,30 +49,35 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Actions</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     @foreach($casts as $index => $casts)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td class="text-center"><img src="{{BASE_URL_IMG . $casts->image}}" alt="" class="w-50"></td>
+                        <td class="text-center"><img src="{{BASE_URL_IMG . $casts->image}}" alt="{{$casts->name}}" width="123"></td>
                         <td>{{ $casts->name }}</td>
+                        <td>{{ (new \DateTime($casts->created_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $casts->updated_at == $casts->created_at ? ' ' : (new \DateTime($casts->updated_at))->format("d/m/Y H:i:s") }}</td>
 
                         <td>
-                            <a href="{{route("detail-cast/" . $casts->id)}}" class="btn btn-warning btn-icon-split">
+                            <a href="{{route("detail-cast/" . $casts->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Sửa</span>
                             </a>
-
-                            <a href="{{route("del-cast/" . $casts->id)}}" class="btn btn-danger btn-icon-split"
+                            <br><br>
+                        </td>
+                        <td>
+                            <a href="{{route("del-cast/" . $casts->id)}}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
                             </a>
                         </td>
                     </tr>

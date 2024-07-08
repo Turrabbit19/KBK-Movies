@@ -36,7 +36,8 @@
                         <th>Genre's Name</th>  
                         <th>Created_at</th>
                         <th>Updated_at</th>                      
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -46,7 +47,8 @@
                         <th>Genre's Name</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>   
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -56,22 +58,21 @@
                         <td>{{ $mgs->nameMovie }}</td>
                         <td>{{ $mgs->nameGenre }}</td>
                         <td>{{ (new \DateTime($mgs->created_at))->format('d/m/Y H:i:s') }}</td>
-                        <td>{{ (new \DateTime($mgs->updated_at))->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $mgs->updated_at == $mgs->created_at ? ' ' : (new \DateTime($mgs->updated_at))->format("d/m/Y H:i:s") }}</td>
 
                         <td>
-                            <a href="{{route("detail-movGen/" . $mgs->id)}}" class="btn btn-warning btn-icon-split">
+                            <a href="{{route("detail-movGen/" . $mgs->id)}}" class="btn btn-warning">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span class="text">Sửa</span>
                             </a>
-
-                            <a href="{{route("del-movGen/" . $mgs->id)}}" class="btn btn-danger btn-icon-split"
+                        </td>
+                        <td>
+                            <a href="{{route("del-movGen/" . $mgs->id)}}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
                             </a>
                         </td>
                     </tr>
