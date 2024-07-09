@@ -17,6 +17,7 @@
             <div class="form-group">
                 <label for="text">Tên phim:</label>
                 <select class="form-control" id="nameMovie" name="movie_id">
+                  <option value="">Select...</option>
                   @foreach($movies as $movs) 
                     <option value="{{$movs->id}}">{{$movs->name}}</option>
                   @endforeach  
@@ -26,6 +27,7 @@
               <div class="form-group">
                 <label for="text">Tên diễn viên:</label>
                 <select class="form-control" id="nameCast" name="cast_id">
+                  <option value="">Select...</option>
                   @foreach($casts as $cass) 
                     <option value="{{$cass->id}}">{{$cass->name}}</option>
                   @endforeach  

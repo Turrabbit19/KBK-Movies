@@ -64,13 +64,17 @@
                 <div id="movie" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
-                        <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
-                        <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
-                        <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
+
                         <a class="collapse-item" href="{{ route("list-genre") }}">Thể loại</a>
+                        <a class="collapse-item" href="{{ route("list-language") }}">Ngôn ngữ</a>
+                        <a class="collapse-item" href="{{ route("list-cast") }}">Diễn viên</a>
+                        <a class="collapse-item" href="{{ route("list-photo") }}">Ảnh</a>
            
                         <h6 class="collapse-header">Movie:</h6>
                         <a class="collapse-item" href="{{ route("list-movie") }}">Phim</a>
+
+                        <a class="collapse-item" href="{{ route("list-showtime") }}">Giờ chiếu</a>
+
                     </div>
                 </div>
             </li>
@@ -92,6 +96,47 @@
                     </div>
                 </div>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Another
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#room"
+                    aria-expanded="true" aria-controls="room">
+                    <i class="fas fa-trailer"></i>
+                    <span>Phòng</span>
+                </a>
+                <div id="room" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="{{ route("list-room") }}">Phòng</a>
+                        <a class="collapse-item" href="{{ route("list-seat-type") }}">Loại ghế</a>
+                        <a class="collapse-item" href="{{ route("list-seat") }}">Ghế</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bill"
+                    aria-expanded="true" aria-controls="bill">
+                    <i class="fas fa-trailer"></i>
+                    <span>Hóa đơn</span>
+                </a>
+                <div id="bill" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="{{ route("list-booking") }}">Đặt vé</a>
+                        <a class="collapse-item" href="{{ route("list-bill") }}">Hóa đơn</a>
+                    </div>
+                </div>
+            </li>
+
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
