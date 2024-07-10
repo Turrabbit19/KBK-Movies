@@ -57,6 +57,10 @@
                 </tfoot>
                 <tbody>
                     @foreach($seats as $index => $seat )
+                    <?php $seat->totals = $seat->price; ?>
+                    <?php $seat->room_id = $seat->room_number; ?>
+                    <?php $seat->seat_type_id = $seat->type_name; ?>
+                    
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $seat->room_id }}</td>
