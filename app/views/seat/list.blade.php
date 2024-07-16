@@ -59,10 +59,10 @@
                     @foreach($seats as $index => $seat )
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $seat->room_id }}</td>
-                        <td>{{ $seat->seat_type_id }}</td>
+                        <td>{{ $seat->room_number }}</td>
+                        <td>{{ $seat->type_name }}</td>
                         <td>{{ $seat->seat_number }}</td>
-                        <td>{{ number_format($seat->totals) }} VNĐ</td>
+                        <td>{{ number_format($seat->price) }} VNĐ</td>
                         <td>{{ (new \DateTime($seat->created_at))->format('d/m/Y H:i:s') }}</td>
                         <td>{{ $seat->updated_at == $seat->created_at ? ' ' : (new \DateTime($seat->updated_at))->format("d/m/Y H:i:s") }}</td>
                        
