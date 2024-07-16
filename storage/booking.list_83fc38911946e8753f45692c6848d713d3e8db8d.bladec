@@ -94,7 +94,7 @@
  </table>
  <?php else: ?>
  <div class="d-flex justify-content-center align-items-center">
- <p>Không có đặt vé nào được tìm thấy.</p>
+ <p>Không có vé nào được đặt.</p>
  </div>
  <?php endif; ?>
  </div>
