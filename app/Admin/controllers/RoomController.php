@@ -1,6 +1,6 @@
 <?php
-    namespace App\Admin\controllers;
-    use App\Admin\models\RoomModel;
+    namespace App\Admin\Controllers;
+    use App\Admin\Models\RoomModel;
 
     class RoomController extends BaseController{
         protected $roomModel;

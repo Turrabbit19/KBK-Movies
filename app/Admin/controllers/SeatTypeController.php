@@ -1,6 +1,6 @@
 <?php
-    namespace App\Admin\controllers;
-    use App\Admin\models\SeatTypeModel;
+    namespace App\Admin\Controllers;
+    use App\Admin\Models\SeatTypeModel;
 
     class SeatTypeController extends BaseController{
         protected $seatTypeModel;

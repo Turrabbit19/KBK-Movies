@@ -1,5 +1,5 @@
 <?php
-namespace App\admin\models;
+namespace App\Admin\Models;
 
 class MovieGenreModel extends BaseModel {
     protected $table = "movie_genre";

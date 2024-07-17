@@ -1,6 +1,6 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\ReviewModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\ReviewModel;
 
 class ReviewController extends BaseController
 {

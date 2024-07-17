@@ -1,8 +1,8 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\GenreModel;
-use App\Admin\models\MovieGenreModel;
-use App\Admin\models\MovieModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\GenreModel;
+use App\Admin\Models\MovieGenreModel;
+use App\Admin\Models\MovieModel;
 
 class MovieGenreController extends BaseController {
     protected $movieGenreModel;

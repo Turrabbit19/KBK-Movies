@@ -1,5 +1,5 @@
 <?php
-    namespace App\Admin\controllers;
+namespace App\Admin\Controllers;
 
     use App\Admin\models\CouponModel;
 

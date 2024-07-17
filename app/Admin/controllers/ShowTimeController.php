@@ -1,9 +1,9 @@
 <?php
-    namespace App\Admin\controllers;
+    namespace App\Admin\Controllers;
 
-use App\Admin\models\MovieModel;
-use App\Admin\models\RoomModel;
-use App\Admin\models\ShowTimeModel;
+use App\Admin\Models\MovieModel;
+use App\Admin\Models\RoomModel;
+use App\Admin\Models\ShowTimeModel;
 
 class ShowTimeController extends BaseController
     {

@@ -1,8 +1,8 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\LanguageModel;
-use App\Admin\models\MovieLanguageModel;
-use App\Admin\models\MovieModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\LanguageModel;
+use App\Admin\Models\MovieLanguageModel;
+use App\Admin\Models\MovieModel;
 
 class MovieLanguangeController extends BaseController {
     protected $movieLanguageModel;

@@ -1,8 +1,8 @@
 <?php
-namespace App\Admin\controllers;
+namespace App\Admin\Controllers;
 
-use App\Admin\models\FoodCateModel;
-use App\Admin\models\FoodModel;
+use App\Admin\Models\FoodCateModel;
+use App\Admin\Models\FoodModel;
 
 class FoodCateController extends BaseController
 {

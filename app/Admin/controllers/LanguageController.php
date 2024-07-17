@@ -1,6 +1,6 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\LanguageModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\LanguageModel;
 
 class LanguageController extends BaseController {
     protected $languageModel;

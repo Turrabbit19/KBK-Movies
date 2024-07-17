@@ -1,5 +1,5 @@
 <?php
-    namespace App\admin\models;
+namespace App\Admin\Models;
 
     class SeatTypeModel extends BaseModel{
         protected $table = 'seat_types';

@@ -1,5 +1,5 @@
 <?php
-namespace App\Client\controllers;
+namespace App\Client\Controllers;
 
 class HomeController extends BaseController
 {

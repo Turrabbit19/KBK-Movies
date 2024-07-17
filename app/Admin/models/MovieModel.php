@@ -1,5 +1,5 @@
 <?php
-    namespace App\admin\models;
+namespace App\Admin\Models;
 
     class MovieModel extends BaseModel {
         protected $table = 'movies';

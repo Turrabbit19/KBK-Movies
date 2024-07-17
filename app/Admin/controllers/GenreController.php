@@ -1,6 +1,6 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\GenreModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\GenreModel;
 
 class GenreController extends BaseController {
     protected $genreModel;

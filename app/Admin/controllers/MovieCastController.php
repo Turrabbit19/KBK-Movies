@@ -1,8 +1,9 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\CastModel;
-use App\Admin\models\MovieCastModel;
-use App\Admin\models\MovieModel;
+namespace App\Admin\Controllers;
+
+use App\Admin\Models\CastModel;
+use App\Admin\Models\MovieCastModel;
+use App\Admin\Models\MovieModel;
 
 class MovieCastController extends BaseController {
     protected $movieCastModel;

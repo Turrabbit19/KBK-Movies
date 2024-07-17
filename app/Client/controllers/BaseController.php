@@ -1,5 +1,5 @@
 <?php
-namespace App\Client\controllers;
+namespace App\Client\Controllers;
 
 use eftec\bladeone\BladeOne;
 

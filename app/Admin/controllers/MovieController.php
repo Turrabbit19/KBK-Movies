@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Admin\controllers;
+namespace App\Admin\Controllers;
 
-use App\Admin\models\MovieModel;
+use App\Admin\Models\MovieModel;
 
 class MovieController extends BaseController
 {

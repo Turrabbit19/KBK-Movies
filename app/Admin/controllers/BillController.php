@@ -1,6 +1,6 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\BillModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\BillModel;
 
 class BillController extends BaseController
 {

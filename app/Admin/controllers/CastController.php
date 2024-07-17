@@ -1,6 +1,6 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\CastModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\CastModel;
 
 class CastController extends BaseController
 {

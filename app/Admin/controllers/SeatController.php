@@ -1,9 +1,9 @@
 <?php
-    namespace App\Admin\controllers;
+    namespace App\Admin\Controllers;
 
-use App\Admin\models\RoomModel;
-use App\Admin\models\SeatModel;
-use App\Admin\models\SeatTypeModel;
+use App\Admin\Models\RoomModel;
+use App\Admin\Models\SeatModel;
+use App\Admin\Models\SeatTypeModel;
 
 class SeatController extends BaseController{
         protected $seatModel;

@@ -1,7 +1,7 @@
 <?php
-namespace App\Admin\controllers;
+namespace App\Admin\Controllers;
 
-use App\Admin\models\AccountModel;
+use App\Admin\Models\AccountModel;
 
 class AccountController extends BaseController
 {

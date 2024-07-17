@@ -1,7 +1,7 @@
 <?php
-namespace App\Admin\controllers;
-use App\Admin\models\MovieModel;
-use App\Admin\models\PhotoModel;
+namespace App\Admin\Controllers;
+use App\Admin\Models\MovieModel;
+use App\Admin\Models\PhotoModel;
 
 class PhotoController extends BaseController {
     protected $photoModel;
