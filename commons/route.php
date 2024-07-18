@@ -160,6 +160,7 @@ $router->group(['prefix' => 'admin'], function($router) {
 
 $router->group(['prefix' => ''], function($router) {
     $router->get('/', [\App\Client\controllers\HomeController::class, "index"]);
+    $router->get('movie', [\App\Client\controllers\MovieController::class, "getViewMovie"]);
 });
 
 $dispatcher = new Dispatcher($router->getData());
