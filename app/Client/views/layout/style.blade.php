@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/bootstrap.min.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/all.min.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/animate.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/flaticon.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/magnific-popup.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/odometer.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/owl.carousel.min.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/owl.theme.default.min.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/nice-select.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/jquery.animatedheadline.css' }}">
+<link rel="stylesheet" href="{{ BASE_URL . 'public/client/css/main.css' }}">

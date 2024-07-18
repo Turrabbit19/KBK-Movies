@@ -1,0 +1,92 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-3">
+ <div>
+ <h1 class="h3 text-gray-800">Movie + Language</h1>
+ <p class="mb-4">
+ Luồng phim + ngôn ngữ
+ <a target="_blank" href="https://datatables.net">KBK Movie</a>.
+ </p>
+ </div>
+
+ <a href="<?php echo \htmlentities(route("admin/add-movLan")??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-primary btn-icon-split">
+ <span class="icon text-white-50">
+ <i class="fas fa-arrow-right"></i>
+ </span>
+ <span class="text">Thêm</span>
+ </a>
+</div>
+
+<?php if(isset($_SESSION['success']) && isset($_GET['msg'])): ?>
+<div class="text-center mb-3">
+ <span style="color: green"><?php echo \htmlentities($_SESSION['success']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+</div>
+<?php endif; ?>
+<div class="card shadow mb-4">
+ <div class="card-body">
+ <div class="table-responsive">
+ <?php if(count($movLans) > 0): ?>
+ <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+ <thead>
+ <tr>
+ <th>#</th>
+ <th>Movie's Name</th>
+ <th>Language's Name</th>  
+ <th>Created_at</th>
+ <th>Updated_at</th>                      
+ <th>Edit</th>
+ <th>Delete</th>
+ </tr>
+ </thead>
+ <tfoot>
+ <tr>
+ <th>#</th>
+ <th>Movie's Name</th>
+ <th>Language's Name</th>
+ <th>Created_at</th>
+ <th>Updated_at</th>   
+ <th>Edit</th>
+ <th>Delete</th>
+ </tr>
+ </tfoot>
+ <tbody>
+ <?php $__currentLoopData = $movLans; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $index => $mls): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td><?php echo \htmlentities($index + 1??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($mls->nameMovie??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($mls->nameLanguage??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities((new \DateTime($mls->created_at))->format('d/m/Y H:i:s')??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($mls->updated_at == $mls->created_at ? ' ' : (new \DateTime($mls->updated_at))->format("d/m/Y H:i:s")??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+
+ <td>
+ <a href="<?php echo \htmlentities(route("admin/detail-movLan/" . $mls->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-warning">
+ <span class="icon text-white-50">
+ <i class="fas fa-exclamation-triangle"></i>
+ </span>
+ </a>
+
+ <a href="<?php echo \htmlentities(route("admin/del-movLan/" . $mls->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-danger"
+ onclick="return confirm('Bạn có chắc chắn muốn xóa không?!??')">
+ <span class="icon text-white-50">
+ <i class="fas fa-trash"></i>
+ </span>
+ </a>
+ </td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+ <?php else: ?>
+ <div class="d-flex justify-content-center align-items-center">
+ <p>Không có luồng nào được tìm thấy.</p>
+ </div>
+ <?php endif; ?>
+ </div>
+ </div>
+</div>
+
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.main'); } ?>
