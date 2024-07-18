@@ -82,7 +82,7 @@
  </table>
  <?php else: ?>
  <div class="d-flex justify-content-center align-items-center">
- <p>Không có thể loại nào được tìm thấy.</p>
+ <p>Không có giờ chiếu nào được tìm thấy.</p>
  </div>
  <?php endif; ?>
  </div>
